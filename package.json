@@ -1,0 +1,28 @@
+{
+  "name": "docker-app",
+  "version": "0.0.1",
+  "description": "Simple node.js app for container linking testing",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eocode/docker-app.git"
+  },
+  "author": "eocode",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eocode/docker-app/issues"
+  },
+  "homepage": "https://github.com/eocode/docker-app#readme",
+  "dependencies": {
+    "express": "4.16.4",
+    "mongodb": "3.1.9"
+  },
+  "devDependencies": {
+    "mocha": "5.2.0",
+    "nodemon": "1.18.6"
+  }
+}
