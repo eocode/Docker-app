@@ -2,13 +2,26 @@ version: "3"
 
 services:
   app:
+    build: .
     image: dockerapp
     environment:
       MONGO_URL: "mongodb://db:27017/test"
     depends_on:
       - db
     ports:
-      - "3000:3000"
+      - "3000-3010:3000"
+    volumes:
+      - .:/usr/src
+      - /usr/src/node_modules
 
   db:
     image: mongo
+
+  lb:
+    image: dockercloud/haproxy
+    links:
+     - app
+    ports:
+     - '8081:80'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
